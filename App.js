@@ -19,41 +19,76 @@ const Header = () => {
     )
 };
 
-const RestaurantCard = () => {
+//props
+const RestaurantCard = ({resData}) => {
+    const {restroName, cuisine, rating, deliveryTime} = resData;
     return (
         <div className="res-card" style={{backgroundColor: "#f0f0f0"}}>
             <img className="res-logo" src="https://tse1.mm.bing.net/th?id=OIP.sBFDF3XzKrprpSea0yGY7wHaE7&pid=Api&P=0&h=180" />
-            <h3>Meghana Foods</h3>
+            <h3>{restroName}</h3>
             <h4>
-                Biryani, North Indian, Asian
+                {cuisine}
             </h4>
             <h4>
-                4.4 stars
+                {rating} stars
             </h4>
             <h4>
-                38 minutes
+                {deliveryTime} minutes
             </h4>
         </div>
     )
-}
+};
+
+const resList = [
+    {
+        restroId: 1,
+        restroName: "Tasty Bites",
+        cuisine: "Italian",
+        rating: 4.5,
+        deliveryTime: 30
+    },
+    {
+        restroId: 2,
+        restroName: "Spicy Delight",
+        cuisine: "Indian",
+        rating: 4.7,
+        deliveryTime: 25
+    },
+    {
+        restroId: 3,
+        restroName: "Sushi World",
+        cuisine: "Japanese",
+        rating: 4.8,
+        deliveryTime: 40
+    },
+    {
+        restroId: 4,
+        restroName: "Burger Haven",
+        cuisine: "American",
+        rating: 4.3,
+        deliveryTime: 20
+    },
+    {
+        restroId: 5,
+        restroName: "Green Leaf",
+        cuisine: "Vegan",
+        rating: 4.6,
+        deliveryTime: 35
+    }
+];
 
 const Body = () => {
     return (
         <div className="body" >
             <div className="search">Search</div>
             <div className="res-container">
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
+                {resList.map((restaurant) => (
+                    <RestaurantCard key={restaurant.restroId} resData = {restaurant}/>
+                ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
 const AppLayout = () => {
     return (
