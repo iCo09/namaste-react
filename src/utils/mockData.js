@@ -10,7 +10,7 @@ const resList = [
         restroId: 2,
         restroName: "Spicy Delight",
         cuisine: "Indian",
-        rating: 4.7,
+        rating: 3.3,
         deliveryTime: 25
     },
     {
@@ -24,7 +24,7 @@ const resList = [
         restroId: 4,
         restroName: "Burger Haven",
         cuisine: "American",
-        rating: 4.3,
+        rating: 3.5,
         deliveryTime: 20
     },
     {
