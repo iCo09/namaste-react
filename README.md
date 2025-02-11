@@ -28,9 +28,13 @@ import Component from "path"
 export const Header()
 import {Header} from "path"
 
-# React Hooks
+# React Hooks🚀
 Normal JS Utility Function
 -useState() -> Superpowerful state variable in react for creating local state variables
 -useEffect() -> 1. When no array is passed, will be called everytime my component re-renders.
                 2. [] When empty array is passed, will be called only once while initial rendering.
                 3. [passed some dependencies] only called when the dependency has some changes.
+
+# 2 types of Routing in Web Apps
+- Client Side Routing
+- Server Side Routing
