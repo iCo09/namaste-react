@@ -57,3 +57,8 @@
 .filter{
     display: flex;
 }
+.resImg{
+    width: 180px;
+    height: 110px;
+    border-radius: 10px;
+}
