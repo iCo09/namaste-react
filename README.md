@@ -38,3 +38,4 @@ Normal JS Utility Function
 # 2 types of Routing in Web Apps
 - Client Side Routing
 - Server Side Routing
+ 
