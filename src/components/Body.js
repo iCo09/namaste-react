@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromtedLabel} from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -11,12 +11,14 @@ const Body = () => {
 
     const[searchText, setSearchText] = useState("");
 
+    const RestaurantCardPromoted = withPromtedLabel(RestaurantCard);
+
     useEffect(() => {
         fetchData();
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=30.73390&lng=76.78890&carousel=true&third_party_vendor=1");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&collection=83667");
         const json = await data.json();
         console.log("API Response:", json);
         setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -54,12 +56,16 @@ const Body = () => {
                 </div>      
             </div>
             <div className="flex flex-wrap">
-                {filteredRestaurants.map((restaurant) => (
-                    <Link 
-                    key={restaurant.info.id}
-                    to={"/restaurants/" + restaurant.info.id}><RestaurantCard  restaurant = {restaurant}/></Link>
-                ))}
-            </div>
+        {filteredRestaurants.map((restaurant) => (
+          <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
+            {restaurant.info.type === "F" ? (
+              <RestaurantCardPromoted restaurant={restaurant} />
+            ) : (
+              <RestaurantCard restaurant={restaurant} />
+            )}
+          </Link>
+        ))}
+      </div>
         </div>
     );
 };
