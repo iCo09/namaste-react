@@ -38,19 +38,19 @@ const Body = () => {
             <div className="filter flex">
                 <div className="search m-4 p-4" >
                     <input type="text" className="border border-solid border-black" value={searchText} onChange={(e) => {setSearchText(e.target.value)}} />
-                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={() => {
+                    <button className="px-4 py-2 bg-green-200 m-4 rounded-lg hover:bg-green-300" onClick={() => {
                         //filter the restro cards
                         const filteredRestaurant = listOfRestaurant.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
                     );
                         setFilteredRestaurants(filteredRestaurant);
-                    }} >Search</button>
+                    }} >Search🔎</button>
                 </div>
                 <div className="search m-4 p-4 flex items-center">
-                <button className="px-4 py-2 bg-gray-100 rounded-lg"
+                <button className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300"
                   onClick={() => {
                    const filteredList = listOfRestaurant.filter((res) => parseFloat(res.info.avgRating) > 4);
                     setFilteredRestaurants(filteredList);
-                }} > Top Rated Restaurants
+                }} > Top Rated Restaurants🚀
                 
                 </button>
                 </div>      
