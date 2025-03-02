@@ -1,11 +1,10 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestauramtCategory = ({data}) => {
+const RestauramtCategory = ({data, showItems, setShowIndex}) => {
 
-    const [showItems, setShowItems] = useState(false);
     const handleClick = () => {
-        setShowItems(!showItems);
+        setShowIndex();
     }
 
     return <div>
@@ -16,10 +15,7 @@ const RestauramtCategory = ({data}) => {
         <span>⬇️</span>
         </div>    
         {showItems && <ItemList items={data.itemCards} /> }
-        
         </div>
-        
-        
     </div>
 }
 export default RestauramtCategory;
