@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestauramtCategory = ({data, showItems, setShowIndex}) => {
+const RestaurantCategory = ({data, showItems, setShowIndex}) => {
 
     const handleClick = () => {
         setShowIndex();
@@ -18,4 +18,4 @@ const RestauramtCategory = ({data, showItems, setShowIndex}) => {
         </div>
     </div>
 }
-export default RestauramtCategory;
+export default RestaurantCategory;

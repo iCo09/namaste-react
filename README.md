@@ -39,3 +39,11 @@ Normal JS Utility Function
 - Client Side Routing
 - Server Side Routing
  
+
+# Redux Toolkit
+- Install Libraries - @reduxjs/toolkit and react-redux
+- Build our store
+- Connect store to our app
+- Slice(cart slice)
+- Dispatch action
+- Selector
