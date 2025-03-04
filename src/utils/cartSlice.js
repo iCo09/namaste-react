@@ -7,6 +7,7 @@ const cartSlice = createSlice({
     },
     reducers: {
         addItem: (state, action) => {
+            //redux toolkit uses immer library to allow direct state mutation
             state.items.push(action.payload);
         },
         removeItem: (state) => {
