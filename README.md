@@ -35,15 +35,27 @@ Normal JS Utility Function
                 2. [] When empty array is passed, will be called only once while initial rendering.
                 3. [passed some dependencies] only called when the dependency has some changes.
 
-# 2 types of Routing in Web Apps
+# 2 types of Routing in Web Apps🚀
 - Client Side Routing
 - Server Side Routing
  
 
-# Redux Toolkit
+# Redux Toolkit🚀
 - Install Libraries - @reduxjs/toolkit and react-redux
 - Build our store
 - Connect store to our app
 - Slice(cart slice)
 - Dispatch action
 - Selector
+
+# Types of testing(developer)🚀
+- Unit Testing -> Testing one specific component
+- Intergration Testing -> Multiple components talking to each other and testing by code
+- End to End Testing -> Testing the application as soon as user lands on the page and user exiting the page.
+
+# Setting up Testing in our app🚀
+- Install React Testing Library
+- Install Jest
+- Install babel dependencies
+- Configure babel
+- Configure parcel config file to disable default babel transpilation
