@@ -63,3 +63,4 @@ Normal JS Utility Function
 - Install jsdom library
 - Install @babel/preset-react - to make JSX work in the test cases.
 - Include @babel/preset-react
+- npm i -D @testing-library/jest-dom
