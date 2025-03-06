@@ -59,3 +59,7 @@ Normal JS Utility Function
 - Install babel dependencies
 - Configure babel
 - Configure parcel config file to disable default babel transpilation
+- Jest configuration - npx jest --init
+- Install jsdom library
+- Install @babel/preset-react - to make JSX work in the test cases.
+- Include @babel/preset-react
