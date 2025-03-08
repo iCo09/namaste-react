@@ -18,13 +18,19 @@ const Body = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&collection=83667");
-        const json = await data.json();
-        console.log("API Response:", json);
-        setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      try {
+          const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&collection=83667");
+          const json = await data.json();
+          console.log("API Response:", json);
+  
+          const restaurants = json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+          setListOfRestaurant(restaurants);
+          setFilteredRestaurants(restaurants);
+      } catch (error) {
+          console.error("Failed to fetch data:", error);
+      }
     };
-
+  
     const onlineStatus = useOnlineStatus();
 
     if(onlineStatus === false) {
