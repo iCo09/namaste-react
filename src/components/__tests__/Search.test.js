@@ -1,4 +1,4 @@
-import { render, screen, waitFor, act } from "@testing-library/react";
+import { render, screen, act, fireEvent } from "@testing-library/react";
 import Body from "../Body";
 import MOCK_DATA  from "../mocks/mockResListData.json";
 import { BrowserRouter } from "react-router-dom";
@@ -19,7 +19,20 @@ it("Should render the body component", async () => {
     );
   });
 
+  const cardsBeforeSearch = screen.getAllByTestId("resCard")
+  expect(cardsBeforeSearch .length).toBe(8);
+
   // Now check if button exists
   const searchBtn = screen.getByRole("button", { name: "Search🔎" });
+
+  const searchInput = screen.getByTestId("searchInput");
   expect(searchBtn).toBeInTheDocument();
+
+  fireEvent.change(searchInput, { target: {value: "burger"}});
+
+  fireEvent.click(searchBtn);
+
+  const cards = screen.getAllByTestId("resCard");
+  expect(cards.length).toBe(2);
+  
 });
